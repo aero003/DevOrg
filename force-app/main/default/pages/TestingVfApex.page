@@ -1,0 +1,8 @@
+<apex:page controller="testingApex">
+    <!--<apex:outputText value="{!str}"/>-->
+    <apex:form >
+        Enter your input: <apex:inputText value="{!str1}"/><br/>
+        <apex:outputText value="{!str2}"/><br/>
+        <apex:commandButton value="Submit" action="{!strMethod}"/>
+    </apex:form>
+</apex:page>

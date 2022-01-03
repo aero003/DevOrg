@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity" extensions="OppRelatedListController">
+    <apex:form >
+    	<apex:actionFunction name="FileDownload" action="{!FileDownload}">
+    		<apex:param assignTo="{!pId}" name="AcctId" value=""/>
+		</apex:actionFunction>
+    </apex:form>
+</apex:page>

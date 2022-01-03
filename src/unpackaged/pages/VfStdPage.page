@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="AccountInsertController">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+                <apex:inputField value="{!acc.name}"/>
+                <apex:inputField value="{!acc.fax}"/>
+                <apex:inputField value="{!acc.industry}"/>
+            </apex:pageBlockSection>
+            	<apex:commandButton value="Submit" action="{!save}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
