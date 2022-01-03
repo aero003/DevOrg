@@ -12,7 +12,7 @@ public class AccountEventHandler
              	acc.ShippingPostalCode = acc.BillingPostalCode;
          	}
      	}
-	}*/
+	}*/ 
     
     public static void addRelatedRecord(List<Account> listOfAccount)
     {

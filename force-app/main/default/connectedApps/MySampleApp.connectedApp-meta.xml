@@ -21,4 +21,4 @@
         <refreshTokenPolicy>infinite</refreshTokenPolicy>
     </oauthPolicy>
     <profileName>System Administrator</profileName>
-</ConnectedApp>
+</ConnectedApp> 
