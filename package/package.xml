@@ -5,8 +5,8 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>AccountTriggers</members>
-        <name>ApexTrigger</name>
+        <members>MySampleApp</members>
+        <name>ConnectedApp</name>
     </types>
     <version>53.0</version>
 </Package>
