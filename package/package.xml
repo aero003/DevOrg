@@ -2,6 +2,8 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>AccountEventHandler</members>
+        <members>AccountInsertController</members>
+        <members>AccountProcessor</members>
         <name>ApexClass</name>
     </types>
     <version>53.0</version>
