@@ -1,6 +1,6 @@
 trigger AccountTriggers on Account (before insert, before update, after insert, after update, before delete) 
 {
-    //triggers sfdx
+    //triggers sfdx git delta
     if(Trigger.isInsert)
     {
         if(Trigger.isBefore)
