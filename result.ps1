@@ -1,3 +1,4 @@
+#result
 $JSONResult = Get-Content .\stdout.json | ConvertFrom-Json |Select-Object -expand  result |Select-Object -expand details | Select-Object -expand componentSuccesses 
 $JSONResult | Select-Object @{Name="Component Type";Expression={$_.componentType}}, @{Name="File Name";Expression={$_.fileName}}, @{Name="Full Name";Expression={$_.fullName}}, @{Name="Status";Expression={$_.success}} | Sort-Object success > .\mailResult.txt
 
