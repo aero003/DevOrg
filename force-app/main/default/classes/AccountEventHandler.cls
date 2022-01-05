@@ -1,3 +1,4 @@
+//Deploy from Develop branch trig
 public class AccountEventHandler 
 {
 	/*public static void accountAddressTrigger(List<Account> listOfAccount)
@@ -11,7 +12,7 @@ public class AccountEventHandler
              	acc.ShippingPostalCode = acc.BillingPostalCode;
          	}
      	}
-	}*/
+	}*/ 
     
     public static void addRelatedRecord(List<Account> listOfAccount)
     {

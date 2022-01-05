@@ -1,3 +1,4 @@
+//Weather class
 public with sharing class Testweather 
 {
     public string city{get;set;}

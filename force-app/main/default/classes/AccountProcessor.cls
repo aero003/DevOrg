@@ -12,7 +12,7 @@ public class AccountProcessor
             System.debug('ID: '+acc.Id);
         }
         update accList;
-        //System.debug('Count: '+count);
+        //System.debug('Count: '+count); output
        
 	}
 }
