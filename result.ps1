@@ -23,3 +23,25 @@ $smtp.EnableSsl = $true
 $smtp.Credentials = New-Object System.Net.NetworkCredential("adithiyan@minusculetechnologies.com", "tfveajwjepitouum")
 
 $smtp.send($mail)
+
+
+$prevCommitID = "f36f28e261a5c25d37345c2fdedba04c182797b1" 
+$latestCommmitID = "9249b7f60b4884550d0797c15716e476501934b1"
+sfdx sgd:source:delta --to $latestCommmitID --from $prevCommitID --output .
+$_SourcePath = "package/package.xml"
+$_DestinationPath = ".\delta/src"
+Copy-item -path $_SourcePath -destination $_DestinationPath 
+
+sfdx sgd:source:delta --from f36f28e261a5c25d37345c2fdedba04c182797b1 --output delta/src --generate-delta
+
+$sourcePath = "delta/src/test.txt"
+$destinationPath = "delta/" 
+
+$file = "delta\src"
+Remove-Item delta/src -Recurse
+
+Copy-Item -path $sourcePath -destination $destinationPath
+
+#Getting the changed path content
+
+Get-Content .\delta/src/package/package.xml
