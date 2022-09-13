@@ -1,6 +1,6 @@
 public class AccountEventHandler 
 {
-	/*public static void accountAddressTrigger(List<Account> listOfAccount)
+	/***public static void accountAddressTrigger(List<Account> listOfAccount)
     {
         for(Account acc : listOfAccount)
      	{
