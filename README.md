@@ -25,6 +25,7 @@ echo "--- destructiveChanges.xml generated with deleted metadata ---"
 cat destructiveChanges/destructiveChanges.xml
 echo
 echo "--- Deleting removed metadata ---"
+
 sfdx force:mdapi:deploy -d destructiveChanges --ignorewarnings
 ```
 
