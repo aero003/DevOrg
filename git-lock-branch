@@ -1,0 +1,134 @@
+#! /usr/bin/env bash
+
+# Constants
+toplevel=$(git rev-parse --show-toplevel)
+if [ $? -ne 0 ]; then
+  exit 128
+fi
+precommitfile=$toplevel/.git/hooks/pre-commit
+
+# Parse arguments
+_parse() {
+  [ $# -eq 0 ] && _usage
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+    -h|--help) _usage ;;
+    -l) _list; exit ;;
+    -u) _UNLOCK=1 ;;
+    -e) _EXPORT=1 ;;
+    -c) _CHECK=1 ;;
+    *) _commands="$_commands $1" ;;
+    esac
+    shift || true
+  done
+}
+
+# Print usage
+_usage() {
+  cat >&2 <<EOS
+Usage: git lock-branch [options] <branch>
+Options:
+  -h,--help    Show this help and exit
+  -u           Unlock
+  -l           List current locks
+  -e           Export locked branches to .gitlock
+EOS
+  exit 1;
+}
+
+# List locked branches
+_list() {
+  (
+    git config --get-all branch.lock | sort -u
+    [ -f "$toplevel/.gitlock" ] && cat "$toplevel/.gitlock"
+  ) | sort -u
+}
+
+# If hook script exists make sure it's bash
+checkhook() {
+  if [ -f "$precommitfile" ]; then
+    head -n 1 $precommitfile | grep -q 'bash' || {
+      echo Existing pre-commit script does not appear to be bash
+      echo Unable to install
+      exit 1
+    }
+  else
+    stub
+  fi
+}
+
+# If there is no existing pre-commit, then create it
+stub() {
+  echo "#! /usr/bin/env bash" > $precommitfile
+  chmod +x $precommitfile
+  echo Initialized pre-commit hook
+}
+
+# Initialize git-lock
+_init() {
+  checkhook
+  grep -q git-lock-branch $precommitfile || {
+    cat >> $precommitfile <<EOS
+
+# git-lock-branch
+git lock-branch -c
+# /git-lock-branch
+EOS
+    echo Initialized git-lock-branch
+  }
+}
+
+# Check current branch
+_check() {
+  branch=$(git symbolic-ref --short HEAD)
+  _list | grep -q $branch && {
+    echo $branch is locked
+    exit 1
+  } || {
+    echo $branch is not locked
+    exit 0
+  }
+}
+
+# Unlock branch
+_unlock() {
+  if [ -f "$toplevel/.gitlock" ]; then
+    sed -i "/^$1$/d" "$toplevel/.gitlock"
+  else
+    git config --unset branch.lock $1
+  fi
+  echo "$1 unlocked!"
+}
+
+# Lock branch
+_lock() {
+  git config --add branch.lock $1
+  echo "$1 locked"
+}
+
+# Export branches to .gitlock
+_export() {
+  _list > "$toplevel/.gitlocknew"
+  mv "$toplevel/.gitlocknew" "$toplevel/.gitlock"
+  git config --unset-all branch.lock
+}
+
+# Lock or unlock a branch
+_run() {
+  set -- $_commands
+
+  _init
+
+  if [ -n "$_CHECK" ]; then
+    _check
+  elif [ -n "$_UNLOCK" ]; then
+    _unlock $1
+  elif [ -n "$_EXPORT" ]; then
+    _export
+  else
+    _lock $1
+  fi
+}
+
+_parse "${@}"
+_run
