@@ -2,7 +2,7 @@
 
 Generate the sfdx content in source format and destructive change from two git commits.
 
-## TL;DR:
+## TL;DR:    
 
 ```sh
 sfdx plugins:install sfdx-git-delta
