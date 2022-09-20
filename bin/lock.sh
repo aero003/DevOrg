@@ -11,4 +11,4 @@ then
     echo $branch branch is Unlocked
     echo "unlocked" > ./bin/.gitlock
 fi
-#echo $branch > ./bin/.gitlock
+#echo $branch > ./bin/.gitlock ??
