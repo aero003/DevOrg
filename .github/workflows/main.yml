@@ -5,7 +5,7 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
+  commit:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
@@ -35,4 +35,5 @@ jobs:
           if [ "master" = "master" ]
           then
             echo "branch is Locked, you can't commit to it"
+            exit 1
           fi
