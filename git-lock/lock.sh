@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 toplevel=$(git rev-parse --show-toplevel)
 branch="$(git rev-parse --abbrev-ref HEAD)"
-precommitfile=$toplevel/hooks/pre-receive
+precommitfile=$toplevel/.git/hooks/pre-receive
 
 _run() {
     if [ "$1" = "lock" ]
