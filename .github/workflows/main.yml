@@ -34,5 +34,5 @@ jobs:
         run: |
           if [ "master" = "master" ]
           then
-            echo $branch "branch is Locked, you can't commit to it"
+            echo "branch is Locked, you can't commit to it"
           fi.
