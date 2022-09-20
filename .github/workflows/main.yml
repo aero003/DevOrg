@@ -35,5 +35,4 @@ jobs:
           if [ "master" = "master" ]
           then
             echo $branch "branch is Locked, you can't commit to it"
-            exit 1
           fi.
