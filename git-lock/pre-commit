@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+toplevel=$(git rev-parse --show-toplevel)
+content=$(cat $toplevel/git-lock/.gitlock)
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$content" = "$branch" ]
+then
+  echo $branch "branch is Locked, you can't commit to it"
+  exit 1
+fi
