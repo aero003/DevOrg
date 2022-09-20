@@ -35,4 +35,4 @@ jobs:
           if [ "master" = "master" ]
           then
             echo "branch is Locked, you can't commit to it"
-          fi.
+          fi
