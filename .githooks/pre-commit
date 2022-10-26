@@ -21,7 +21,7 @@
 # 		esac
 # 		i=$((i + 1))
 # 	done
-# fi
+# fi 
 
 toplevel=$(git rev-parse --show-toplevel)
 content=$(cat $toplevel/git-lock/.gitlock)
