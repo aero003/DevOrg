@@ -1,7 +1,7 @@
 //Deploy from Develop branch trig
 public class AccountEventHandler {
   /*public static void accountAddressTrigger(List<Account> listOfAccount)
-    {
+    //{
         for(Account acc : listOfAccount)
      	{
          	//acc.Name = acc.name+' Salesforce';
