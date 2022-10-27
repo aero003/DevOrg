@@ -4,7 +4,7 @@ public class AccountEventHandler {
     //{
         for(Account acc : listOfAccount)
      	{
-         	//acc.Name = acc.name+' Salesforce';
+     //   	//acc.Name = acc.name+' Salesforce';
          	Boolean isChecked = acc.Match_Billing_Address__c;
          	if(isChecked)
          	{
