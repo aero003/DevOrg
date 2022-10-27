@@ -9,7 +9,6 @@ public class AccountEventHandler {
          	if(isChecked)
          	{
              	acc.ShippingPostalCode = acc.BillingPostalCode; 
-                System.debug("");
          	}
      	}
 	}*/
