@@ -33,5 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
             echo "branch is Locked, you can't commit to it.."
-            exit 1
+            exit 0
 
