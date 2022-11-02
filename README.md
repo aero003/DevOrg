@@ -3,7 +3,7 @@
 ## TL;DR:
 
 ```sh
-sfdx plugins:install sfdx-git-delta
+sfdx plugins:install sfdx-git-delta   ''
 ```
 
 ```sh
