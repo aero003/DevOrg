@@ -7,7 +7,7 @@ sfdx plugins:install sfdx-git-delta
 ```
 
 ```sh
-sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "."
+sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "." ",.,"
 ```
 
 ```sh
