@@ -42,6 +42,6 @@ Remove-Item delta/src -Recurse
 
 Copy-Item -path $sourcePath -destination $destinationPath
 
-#Getting the changed path contents
+#Getting the changed path contents ..
 
 Get-Content .\delta/src/package/package.xml
