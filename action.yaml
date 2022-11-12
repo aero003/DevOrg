@@ -10,3 +10,4 @@ runs:
     - run: |
         echo ${{ inputs.SF_USERNAME }}
         bash goodbye.sh
+      shell: bash  
