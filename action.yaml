@@ -1,7 +1,7 @@
 name: 'Hello World 2.0' 
 description: 'Greet someone'
 inputs:
-  SF_USERNAME:  # id of input
+  username:  # id of input
     description: 'Enter the Username'
     required: true
 outputs:
@@ -19,6 +19,6 @@ runs:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - run: |
-        echo $SF_USERNAME
+        echo ${{ inputs.username }}
         bash goodbye.sh
       shell: bash
