@@ -1,5 +1,5 @@
 name: 'Hello World 2.0' 
-description: 'Greet someone'
+description: 'Greet someone' 
 inputs:
   SF_USERNAME:  # id of input
     description: 'Enter the Username'
