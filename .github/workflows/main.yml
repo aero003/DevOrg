@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: actions/DevOrg-action@ff0e084eb551ac801890290f9560d43c43298173
+        uses: actions/DevOrg-action@v1
         with:
             who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
