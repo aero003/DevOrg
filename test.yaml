@@ -1,6 +1,0 @@
-name: "UnitTest"
-description: "Perform Unit Test"
-runs:
-  - name: Dependency
-    run: |
-      echo "Dependency setup commands go here"
