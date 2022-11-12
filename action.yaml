@@ -11,8 +11,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-  env: 
-    username: ${{ inputs.SF_USERNAME }}
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
