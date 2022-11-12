@@ -10,7 +10,7 @@ runs:
     - run: |
         echo "Without ENV Variable: ${{ inputs.SF_USERNAME }}"
         echo "With ENV  Variaeble: $username"
-        echo "::set-env name=INPUT_ALLOWED_FEATURES::${{ inputs.SF_USERNAME }}"
+        echo "::set-env name=APP_VERSION::${{ inputs.SF_USERNAME }}"
         bash goodbye.sh
       shell: bash  
       env:
