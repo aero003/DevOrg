@@ -9,7 +9,7 @@ runs:
   steps:
     - run: |
         echo "Without ENV Variable: ${{ inputs.SF_USERNAME }}"
-        echo "With ENV  Variaeble: $username"
+        echo "With ENV  Variaeble: $username" > cred.txt
         bash goodbye.sh
       shell: bash  
       env:
