@@ -8,6 +8,6 @@ runs:
   using: "composite"
   steps:
     - run: |
-        echo ${{ inputs.SF_USERNAME }}
+        echo ${INPUT.SF_USERNAME}"
         bash goodbye.sh
       shell: bash  
