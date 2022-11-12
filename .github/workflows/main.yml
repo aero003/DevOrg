@@ -24,8 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: aero003/DevOrg@feature
-
-
+        with:
+          SF_USERNAME: ${{ secrets.SF_USERNAME }}         
       
       # Runs a single command using the runners shell
       #- name: Run a one-line script
