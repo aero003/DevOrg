@@ -23,12 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
-      - id: foo
-        uses: actions/DevOrg@v1
-        with:
-            who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+      - uses: aero003/DevOrg@feature
+
 
       
       # Runs a single command using the runners shell
