@@ -24,6 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/hello-world-composite-action@ff0e084eb551ac801890290f9560d43c43298173
       
       # Runs a single command using the runners shell
       #- name: Run a one-line script
