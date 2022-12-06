@@ -32,5 +32,5 @@ jobs:
             echo "commitId=$commitSha" >> $GITHUB_ENV
             # Runs a single command using the runners shell
       - name: Print the Commit ID
-        run: echo 'The commit id from previous step is $commitId'  
+        run: echo 'The commit id from previous step is' $commitId  
 
