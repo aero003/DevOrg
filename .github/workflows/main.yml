@@ -29,6 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
             commitSha= git rev-parse HEAD
+            echo $commitSha
             echo "commitSha=$commitSha" >> $GITHUB_ENV
             # Runs a single command using the runners shell
       - name: Run a one-line script
