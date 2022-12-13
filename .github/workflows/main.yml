@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-   pre-commit:
+   Git-Workflow:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,6 +32,8 @@ jobs:
             echo "commitId=$commitSha" >> $GITHUB_ENV
             git push origin --delete feature-del
             # Runs a single command using the runners shell
+      - name: Delete the branch
+        run: git push origin --delete fea-del --verbose
       - name: Print the Commit ID
         run: echo 'The commit id from previous step is' $commitId  
 
