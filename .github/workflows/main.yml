@@ -33,7 +33,7 @@ jobs:
             # Runs a single command using the runners shell
       - name: Delete the branch
         run: |
-            git branch --all --list
+            git branch --remotes --list "origin/*test*"
             #git push origin --delete prashanth
       - name: Print the Commit ID
         run: echo 'The commit id from previous step is' $commitId  
