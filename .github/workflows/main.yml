@@ -30,7 +30,7 @@ jobs:
         run: |
             commitSha=$(git rev-parse HEAD)
             echo "commitId=$commitSha" >> $GITHUB_ENV
-            git push origin --help
+            git push origin --delete feature-del
             # Runs a single command using the runners shell
       - name: Print the Commit ID
         run: echo 'The commit id from previous step is' $commitId  
