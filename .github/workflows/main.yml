@@ -32,7 +32,9 @@ jobs:
             echo "commitId=$commitSha" >> $GITHUB_ENV
             # Runs a single command using the runners shell
       - name: Delete the branch
-        run: git push origin --delete prashanth
+        run: |
+            git branch --list 'test*' --format '%(refname:short)'
+            #git push origin --delete prashanth
       - name: Print the Commit ID
         run: echo 'The commit id from previous step is' $commitId  
 
