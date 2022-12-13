@@ -28,6 +28,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Get the commit Id
         run: |
+            git config --global --list
             commitSha=$(git rev-parse HEAD)
             echo "commitId=$commitSha" >> $GITHUB_ENV
             # Runs a single command using the runners shell
