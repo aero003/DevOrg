@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
       - name: Get the commit Id
@@ -33,8 +33,7 @@ jobs:
             # Runs a single command using the runners shell
       - name: Delete the branch
         run: |
-            cmtSha=$(git branch --list 'test***' -r --format '%(refname:short)')
-            echo cmtSha
+            git branch -r
             #git push origin --delete prashanth
       - name: Print the Commit ID
         run: echo 'The commit id from previous step is' $commitId  
