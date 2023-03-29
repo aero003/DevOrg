@@ -39,5 +39,5 @@ jobs:
             git branch --merged
             #git push origin --delete prashanth
       - name: Print the Commit ID
-        run: echo 'The commit id from previous step is ${{ github.event.workflow_run.head_commit.id}}'  
+        run: echo 'The commit id from previous step is $commitId}'
 
